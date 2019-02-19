@@ -53,4 +53,5 @@ docker network create \
 
 rm -rf /var/lib/apt/lists/*
 
-history -c && poweroff
+# execute the following code manually
+# history -c && poweroff
