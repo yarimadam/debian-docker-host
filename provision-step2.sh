@@ -2,3 +2,5 @@
 
 aptitude update
 aptitude upgrade -y
+
+reboot
