@@ -1,14 +1,18 @@
 #!/usr/bin/env bash
 
-#!/usr/bin/env bash
-
-aptitude install -y git
-aptitude install -y certbot
-aptitude install -y apache2-utils
-aptitude install -y openjdk-8-jdk
+apt-get install -y \
+   git \
+   certbot \
+   apache2-utils \
+   openjdk-8-jdk
 
 # docker pre-requisite
-aptitude install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
+apt-get install -y \
+   apt-transport-https \
+   ca-certificates \
+   curl \
+   gnupg2 \
+   software-properties-common
 
 # add docker gpg key
 curl -fsSL https://download.docker.com/linux/debian/gpg | sudo apt-key add -
@@ -19,9 +23,7 @@ add-apt-repository \
    $(lsb_release -cs) \
    stable"
 
-aptitude update
-
-aptitude install -y docker-ce docker-ce-cli containerd.io
+aptitude update && aptitude install -y docker-ce docker-ce-cli containerd.io
 
 curl -L "https://github.com/docker/compose/releases/download/1.23.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 chmod +x /usr/local/bin/docker-compose
