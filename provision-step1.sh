@@ -2,7 +2,7 @@
 
 cp /usr/share/zoneinfo/Europe/Istanbul /etc/localtime
 
-aptitude update
-aptitude upgrade -y
+apt-get update
+apt-get upgrade -y
 
 reboot
